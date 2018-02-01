@@ -25,26 +25,6 @@ appmodule.factory("dataService", function($http, $q) {
 				'images':[]
 			}
 		];
-	var _galleryData = [
-		{
-			'title':'Graduation Day - 2016-17',
-			'path':'./images/gallery/GradDay16-17/',
-			'thumbpath':'./images/gallery/GradDay16-17/thumbnails/',
-			'images':[]
-		},
-		{
-			'title':'Annual day 2016',
-			'path':'./images/gallery/AnnualDay16/',
-			'thumbpath':'./images/gallery/AnnualDay16/thumbnails/',
-			'images':[]
-		},
-		{
-			'title':'Athletics meet 2016',
-			'path':'./images/gallery/AthleticMeet16/',
-			'thumbpath':'./images/gallery/AthleticMeet16/thumbnails/',
-			'images':[]
-		}
-	]
 	var _makeimages = function(gallery){
 		$.each(_galleries, function(i,v){
 			var stub='';
@@ -65,21 +45,26 @@ appmodule.factory("dataService", function($http, $q) {
 			}
 		});
 	}
-	var _calendar = {
-		'January':[
-				{'date':'1','day':'Sunday','event':''},
-				{'date':'2','day':'Monday','event':''},
-				{'date':'3','day':'Tuesday','event':''},
-			],
-		'February':[
-				{'date':'1','day':'Wednesday','event':''},
-				{'date':'2','day':'Thursday','event':''},
-				{'date':'3','day':'Friday','event':''},
-			],
-		};
+	var _calendar = [
+		{	
+			'month':'January 2018',
+			'days':[
+				{'date':'1','day':'Sunday','event':'Event 1'},
+				{'date':'2','day':'Monday','event':'Event 2'},
+				{'date':'3','day':'Tuesday','event':'Event 3'},
+			]
+		},
+		{
+			'month':'February 2018',
+			'days':[
+					{'date':'1','day':'Wednesday','event':'Event1'},
+					{'date':'2','day':'Thursday','event':'Event 2'},
+					{'date':'3','day':'Friday','event':'Event 3'},
+				]
+		}
+	];
 	var months = ["January", "February", "March", "April", "May", "June", "July",
          "August", "September", "October", "November", "December"];
-
 	var d = new Date();
 
 	var namedMonth = months[d.getMonth()];
@@ -100,10 +85,25 @@ appmodule.factory("dataService", function($http, $q) {
 		});
 		return gallery;
 	}
+	var _getCalendarForMonth = function(){
+		var c='';
+		var calendar = _calendar;
+		$.each(calendar,function(i,v){
+			if(v.month.indexOf(namedMonth)>-1){
+				c = v.days;
+			}
+		});
+		return c;
+	}
+	var _getCurrentMonth = function(){
+		return namedMonth;
+	}
     return {
         getAllNotices: _getAllNotices,
         getTopGalleries: _getTopGalleries,
 		getCalendar:_getCalendar,
-		getGalleries:_getGalleryData
+		getGalleries:_getGalleryData,
+		getCalendarForMonth:_getCalendarForMonth,
+		getCurrentMonth:_getCurrentMonth
     };
 });

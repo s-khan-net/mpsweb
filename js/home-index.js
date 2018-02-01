@@ -53,7 +53,8 @@ appmodule.config(['$routeProvider', '$locationProvider', function ($routeProvide
 appmodule.controller("homeController", function ($scope,dataService) {
 		$scope.notices= dataService.getAllNotices();
 		$scope.galleries=dataService.getTopGalleries();
-		$scope.calendar = dataService.getCalendar();
+        $scope.calendar = dataService.getCalendarForMonth();
+        $scope.currentMonth = dataService.getCurrentMonth();
 });
 appmodule.controller("contactController", function ($scope) {
 		$scope.heading='Contact';
