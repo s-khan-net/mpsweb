@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html data-ng-app="myapp">
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mps</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="lib/font-awesome-4.6.3/css/font-awesome.css" />
+    <link href="css/site.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid well text-center navbar-fixed-top top-name-header" >KNOWLEDGE <i class="fa fa-star" style="color: #efa22f;"></i> WISDOM <i class="fa fa-star" style="color: #efa22f;"></i> VIRTUE</div>
+<nav class="navbar navbar-default navbar-fixed-top" aria-label="Main Menu">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mps-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" style="margin-top:-38px" href="/"><div class="logo_m" id="logo">&nbsp;</div></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="mps-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">HOME</a></li>
+        <li><a href="./#!/about">ABOUT</a></li>
+        <li><a href="./#!/campus">CAMPUS</a></li>
+        <li><a href="./#!/facilities">FACILITIES</a></li>
+        <li><a href="./#!/academics">ACADEMICS</a></li>
+        <li><a href="./#!/gallery">GALLERY</a></li>
+        <li><div id="scrollcounter"></div></li>
+        <!-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="./#!/news">News</a></li>
+        <li><a href="./#!/calendar">Calendar</a></li>
+        <li><a href="./#!/contact">Contact us</a></li>
+        <!-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" _target="self">User <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">My Page</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </li> -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- Content -->
+    <div data-ng-view=""></div>
+<!--  -->
+<footer class="footer">
+    <div class="container">
+
+        <div class="row" style="padding-bottom:12px">
+
+            <div class="col-md-offset-3 col-md-6 text-center" >
+                <div style="width:60%;margin:0 auto;border-top:1px solid #CCC;padding-bottom:6px"></div>
+                <a href="http://www.google.com" target="_blank"><div style="display:inline-block" class="fb-link"><i class="fa fa-facebook-square fa-3x"></i></div></a>
+                <a href="http://www.google.com" target="_blank"><div style="display:inline-block" class="tw-link"><i class="fa fa-twitter-square fa-3x"></i></div></a>
+                <a href="http://www.google.com" target="_blank"><div style="display:inline-block" class="gp-link"><i class="fa fa-google-plus-square fa-3x"></i></div></a>
+                <a href="http://www.google.com" target="_blank"><div style="display:inline-block" class="li-link"><i class="fa fa-linkedin-square fa-3x"></i></div></a>
+                <a href="http://www.google.com" target="_blank"><div style="display:inline-block" class="fl-link"><i class="fa fa-flickr fa-3x"></i></div></a>
+            </div>
+        <!-- <div class="row">
+            <div class="col-xs-12 text-left" >© 2017 Copyright: <a href="https://saudkhan.net" target="_blank">saudkhan.net</a></div>
+        </div> -->
+    </div>
+</footer>
+
+<script src="lib/jquery/dist/jquery.js"></script>
+<script src="js/site.js"></script>
+<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="lib/angular/angular.min.js"></script>
+<script src="lib/angular/angular-route.min.js"></script>
+<script src="js/home-index.js"></script>
+<script src="js/dataservice.js"></script>
+
+</body>
+</html>
+

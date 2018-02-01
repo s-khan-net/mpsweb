@@ -1,0 +1,56 @@
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="./js/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="./css/jquery.fancybox.css?v=2.1.5" media="screen" />
+<style>
+    #gallery
+    {
+        list-style:none;
+        margin:0 auto;
+    }
+    #gallery li
+    {
+        display:inline;
+        padding:15px;
+    }
+    .img-hover
+    {
+        opacity:0.7;
+      -webkit-transition: all ease .3s;
+      -o-transition: all ease .3s;
+      -moz-transition: all ease .3s;
+      -ms-transition: all ease .3s;
+      transition: all ease .3s;
+    }
+    .fancybox { padding:5px;}
+    </style>
+<script>
+	$(document).ready(function(){
+		$(".fancybox").hover(function(){
+			$(this).addClass('img-hover');
+		});
+		$(".fancybox").mouseout(function(){
+			$(this).removeClass('img-hover');
+		});
+		$('.fancybox').fancybox({
+
+		});
+	});
+</script>
+<div class="container page-margins">
+<div class="page-heading"><i class="fa fa-star" style="color: #efa22f;"></i> {{heading}} <i class="fa fa-star" style="color: #efa22f;"></i></div>
+<div class="row space-top">
+    <div class="col-md-12" style="font-size: 16px;" id="gallery">
+        <ul>
+            <li ng-repeat="g in allGalleries">
+                <a style="padding:12px">{{ g.title }}</a>
+                <ul>
+                    <li ng-repeat="i in g.images">
+                            <a class="fancybox" data-fancybox-group="gallery"  href="{{i.pic}}"><img src="{{i.thumb}}" /></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        
+    </div>
+</div>
+</div>

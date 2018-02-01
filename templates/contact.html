@@ -1,0 +1,69 @@
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="../js/gmaps.js"></script>
+<div class="container page-margins" >
+<div class="page-heading"><i class="fa fa-star" style="color: #efa22f;"></i> {{heading}} <i class="fa fa-star" style="color: #efa22f;"></i></div>
+<div class="row space-top">
+  <div class="col-md-6">
+    <br>
+    <br>
+    <b>Mysore Public School</b><br>
+    H.D. Kote Road, Rayankere Post<br>
+    Mysuru - 571440,<br>
+    Karnataka.<br>
+    <br>
+    <table class="table table-alternate">
+      <tbody>
+        <tr>
+            <td><i class="fa fa-phone fa-lg" aria-hidden="true"></i></td>
+            <td><strong>+918212597917, +918212597957</strong></td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-fax fa-lg" aria-hidden="true"></i></td>
+            <td>+918212597934</td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></td>
+            <td><a href="mailto:mps_mysore@yahoo.co.in">mps_mysore@yahoo.co.in</a></td>
+        </tr>
+        <tr>
+          <td><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></td>
+          <td><a href="mailto:info@mysorepublicschool.in">info@mysorepublicschool.in</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6 well space-top ">
+    <div class="row">
+      <div class="col-md-12">
+        <div style="width:100%;height:340px;border:1px solid #CCC;padding:5px">
+          <div id="googleMap"></div>
+        </div>
+      </div>
+  </div>
+  </div>
+  
+  </div>
+</div>
+
+<script type="text/javascript">
+  var map = new GMaps({
+                      div: '#googleMap',
+                      lat: 12.2434659,
+                      lng: 76.6127622,
+                      width: '100%',
+                      height: '92%',
+                      zoom: 13,
+                      zoomControl: true,
+                      panControl: false,
+                      
+                  }); 
+      map.addMarker({
+                    lat: 12.2434659,
+                    lng: 76.6127622,
+                    title: 'Evolve',
+                    infoWindow: {
+                      content: '<span style="background-color:red;font-bold:true;padding:2px;font-size:12px">Mysore Public School</span>'
+                    }
+              });
+</script>
