@@ -1,3 +1,19 @@
 <div class="container page-margins" >
 <div class="page-heading"><i class="fa fa-star" style="color: #efa22f;"></i> {{heading}} <i class="fa fa-star" style="color: #efa22f;"></i></div>
+<div class="row space-top">
+    <div class="col-md-12" >
+        <div class="panel panel-info" ng-repeat="c in calendar">
+          <div class="panel-heading">
+            <div class="panel-title panel-heading-title"><i class="fa fa-calendar" aria-hidden="true"></i> {{ c.month }}</div>
+          </div>
+          <div class="panel-body">
+            <ul class="home-links">
+              <li ng-repeat="x in c.days">
+                <a>{{ x.day }}, {{ x.date }} - {{ x.event }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+</div>
 </div>

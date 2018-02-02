@@ -69,8 +69,9 @@ appmodule.controller("galleryController", function ($scope,dataService) {
 appmodule.controller("aboutController", function ($scope) {
 		$scope.heading='About MPS';
 });
-appmodule.controller("calendarController", function ($scope) {
-		$scope.heading='School Calendar';
+appmodule.controller("calendarController", function ($scope,dataService) {
+        $scope.heading='School Calendar';
+        $scope.calendar = dataService.getCalendar();
 });
 appmodule.controller("facilitiesController", function ($scope) {
         $scope.heading='Facilities';

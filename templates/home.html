@@ -73,7 +73,8 @@
             <div class="panel-body">
               <ul class="home-links">
                 <li ng-repeat="x in notices">
-                  <a style="cursor:default">{{ x.title }}</a>
+                  <a style="cursor:default">{{ x.title }}</a><br>
+                  <span style="font-size:12px;font-weight:400">{{ x.desc }}</span>
                 </li>
               </ul>
 
@@ -106,7 +107,7 @@
             <div class="panel-body">
               <ul class="home-links">
                 <li ng-repeat="x in calendar">
-                  <a>{{ x.day }}, {{ x.date }} - {{ x.event }}</a>
+                  <a href="./#!/calendar">{{ x.day }}, {{ x.date }} - {{ x.event }}</a>
                 </li>
               </ul>
             </div>

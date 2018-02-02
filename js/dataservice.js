@@ -1,9 +1,9 @@
 
 appmodule.factory("dataService", function($http, $q) {
     var _notices=[
-		{'title':'MPS Wins best school award', 'desc':'desc 1'},
-		{'title':'Result of painting competition-Swachhta Pakhwadas', 'desc':'desc 2'},
-		{'title':'Annual day celebrations', 'desc':'desc 3'},
+		{'title':'Teachers symposium in mps', 'desc':'Mysore public school conducted a symposium for school teachers from mysore.'},
+		{'title':'Public examinations for class 10', 'desc':'Details of the exam locations and hall ticket will be given to students who are up for the exams - All the best to all of you.'},
+		{'title':'Annual day celebrations', 'desc':'The annual day is was celebated for this year in the school premisis.'},
 		];
 	var _galleries=[
 			{
@@ -28,21 +28,43 @@ appmodule.factory("dataService", function($http, $q) {
 	var _makeimages = function(gallery){
 		$.each(_galleries, function(i,v){
 			var stub='';
-			if(v.title.indexOf('Annual')>-1)
+			if(v.title.indexOf('Annual')>-1){
 				stub = 'MPS16-AD_';
-			else if(v.title.indexOf('Graduation')>-1)
-				stub = 'GRA-';
-			else if(v.title.indexOf('Athletics')>-1)
-				stub='Sports';
-			if(v.title == gallery){
-				for(var i=1;i<=15;i++){
-					var img = {
-						'thumb'	:v.thumbpath+stub+i.toString()+'_tn.jpg',
-						'pic':v.path+stub+i.toString()+'.jpg'
-					};
-					v.images.push(img);
+				if(v.title == gallery){
+					for(var i=1;i<=15;i++){
+						var img = {
+							'thumb'	:v.thumbpath+stub+i.toString()+'_tn.jpg',
+							'pic':v.path+stub+i.toString()+'.jpg'
+						};
+						v.images.push(img);
+					}
 				}
 			}
+			else if(v.title.indexOf('Graduation')>-1){
+				stub = 'GRA-';
+				if(v.title == gallery){
+					for(var i=1;i<=15;i++){
+						var img = {
+							'thumb'	:v.thumbpath+stub+i.toString()+'_tn.jpg',
+							'pic':v.path+stub+i.toString()+'.jpg'
+						};
+						v.images.push(img);
+					}
+				}
+			}
+			else if(v.title.indexOf('Athletics')>-1){
+				stub='Sports';
+				if(v.title == gallery){
+					for(var i=1;i<=15;i++){
+						var img = {
+							'thumb'	:v.thumbpath+stub+i.toString()+'_tn.jpg',
+							'pic':v.path+stub+i.toString()+'.jpg'
+						};
+						v.images.push(img);
+					}
+				}
+			}
+
 		});
 	}
 	var _calendar = [
