@@ -1,6 +1,40 @@
 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-<script type="text/javascript" src="../js/gmaps.js"></script>
+<style>
+  .map {
+      min-width: 300px;
+      min-height: 300px;
+      width: 100%;
+      height: 100%;
+  }
+
+  .header {
+      background-color: #F5F5F5;
+      color: #36A0FF;
+      height: 70px;
+      font-size: 27px;
+      padding: 10px;
+  }
+</style>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  function init_map1() {
+      var myLocation = new google.maps.LatLng(12.2434659, 76.6127622);
+      var mapOptions = {
+          center: myLocation,
+          zoom: 16
+      };
+      var marker = new google.maps.Marker({
+          position: myLocation,
+          title: '<span style="background-color:red;font-bold:true;padding:2px;font-size:12px">Mysore Public School</span>'
+      });
+      var map = new google.maps.Map(document.getElementById("googleMap"),
+          mapOptions);
+      marker.setMap(map);
+  }
+  init_map1();
+});
+</script>
 <div class="container page-margins" >
 <div class="page-heading"><i class="fa fa-star" style="color: #efa22f;"></i> {{heading}} <i class="fa fa-star" style="color: #efa22f;"></i></div>
 <div class="row space-top">
@@ -37,7 +71,7 @@
     <div class="row">
       <div class="col-md-12">
         <div style="width:100%;height:340px;border:1px solid #CCC;padding:5px">
-          <div id="googleMap"></div>
+          <div id="googleMap" class="map"></div>
         </div>
       </div>
   </div>
@@ -46,24 +80,4 @@
   </div>
 </div>
 
-<script type="text/javascript">
-  var map = new GMaps({
-                      div: '#googleMap',
-                      lat: 12.2434659,
-                      lng: 76.6127622,
-                      width: '100%',
-                      height: '92%',
-                      zoom: 13,
-                      zoomControl: true,
-                      panControl: false,
-                      
-                  }); 
-      map.addMarker({
-                    lat: 12.2434659,
-                    lng: 76.6127622,
-                    title: 'Evolve',
-                    infoWindow: {
-                      content: '<span style="background-color:red;font-bold:true;padding:2px;font-size:12px">Mysore Public School</span>'
-                    }
-              });
-</script>
+
