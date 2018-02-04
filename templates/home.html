@@ -77,26 +77,23 @@
                   <span style="font-size:12px;font-weight:400">{{ x.desc }}</span>
                 </li>
               </ul>
-
-<!--               <div class="row" ng-repeat="x in notices">
-                <div class="col-xs-12">
-                  {{ x.title }}
-                </div>
-              </div> -->
-
             </div>
           </div>
       </div>
       <div class="col-md-6">
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <div class="panel-title panel-heading-title"><i class="fa fa-youtube-play" aria-hidden="true" style="color:red;"></i> MPS</div>
-            </div>
-            <div class="panel-body">
-              Video
-            </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <div class="panel-title panel-heading-title"><i class="fa fa-picture-o" aria-hidden="true"></i> Gallery</div>
           </div>
-      </div>
+          <div class="panel-body">
+           <ul class="home-links">
+              <li ng-repeat="x in galleries">
+                <a href="./#!/gallery">{{ x.title }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
   </div>
   <div class="row">
       <div class="col-md-6" >
@@ -114,18 +111,14 @@
           </div>
       </div>
       <div class="col-md-6">
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <div class="panel-title panel-heading-title"><i class="fa fa-picture-o" aria-hidden="true"></i> Gallery</div>
-            </div>
-            <div class="panel-body">
-             <ul class="home-links">
-                <li ng-repeat="x in galleries">
-                  <a href="./#!/gallery">{{ x.title }}</a>
-                </li>
-              </ul>
-            </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <div class="panel-title panel-heading-title"><i class="fa fa-youtube-play" aria-hidden="true" style="color:red;"></i> MPS</div>
           </div>
-      </div>
+          <div class="panel-body">
+            Video
+          </div>
+        </div>
+    </div>
   </div>
 </div>
